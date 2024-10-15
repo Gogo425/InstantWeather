@@ -34,26 +34,30 @@ function creationCarte(TypeCarte, valeur){
 
     switch (TypeCarte) {
         case "Ensoleillement":
-            span.classList.add("fa-regular", "fa-sun")
+            // span.classList.add("fa-regular", "fa-sun")
+            span.innerHTML = "<img class = " + "tailleImages" +  " src=" + "../Logos/soleil.PNG" + ">";
             h2[0].textContent = TypeCarte
             h3[0].textContent = valeur + " h" 
             break;
         
             
         case "T° Min":
-            span.classList.add("fa-solid", "fa-temperature-low")
+            // span.classList.add("fa-solid", "fa-temperature-low")
+            span.innerHTML = "<img class = " + "tailleImages" +  " src=" + "../Logos/froid.PNG" + ">";
             h2[0].textContent = TypeCarte
             h3[0].textContent = valeur + " °C"
             break;
         
         case "T° Max":
-            span.classList.add("fa-solid", "fa-temperature-high")
+            // span.classList.add("fa-solid", "fa-temperature-high")
+            span.innerHTML = "<img class = " + "tailleImages" +  " src=" + "../Logos/chaud.PNG" + ">";
             h2[0].textContent = TypeCarte
             h3[0].textContent = valeur + " °C"
             break;
     
         case "Proba pluie":
-            span.classList.add("fa-solid", "fa-cloud-rain")
+            // span.classList.add("fa-solid", "fa-cloud-rain")
+            span.innerHTML = "<img class = " + "tailleImages" +  " src=" + "../Logos/pluie.PNG" + ">";
             h2[0].textContent = TypeCarte
             h3[0].textContent = valeur + " %"
             break;
