@@ -77,7 +77,6 @@ function chargeParametre(){
         window.localStorage.setItem("ValeurJour",1)
         nbjour = 1;
     }
-    console.log(window.localStorage.getItem("ValeurJour"))
     changeLatitude.checked = validee(window.localStorage.getItem("ValeurLatitude"))
     changeLongitude.checked = validee(window.localStorage.getItem("ValeurLongitude"))
     changeCumulPluie.checked = validee(window.localStorage.getItem("ValeurCumulPluie"))
@@ -106,7 +105,6 @@ function validee(valeur){
     }
     return false
 }
-
 
 
 function creationCarte(TypeCarte, valeur){
@@ -152,7 +150,7 @@ function creationCarte(TypeCarte, valeur){
 
 }
 
-console.log(str);
+
 zoneCodePostal.addEventListener("input", recherche);
 
 function recherche(valeur){
@@ -167,7 +165,7 @@ function recherche(valeur){
             afficheVille()
         }
     }
-    console.log(str.length)
+
 }
 
 function verifChiffre(chiffre){
@@ -186,6 +184,7 @@ function afficheVille(){
         return reponse.json();
     })
     .then(data => {
+        console.log(data)
         selectionVilles.innerHTML = ""
         if(data.length <= 0){   
             alert("Attention le code postale n'existe pas")
@@ -202,15 +201,16 @@ function afficheVille(){
         villeChoisie = document.querySelectorAll(".villeChoisie");
 
         villeChoisie.forEach((bouton) => {
+            console.log(bouton)
             bouton.addEventListener('click', () => {
                 const valeur = bouton.value; // Décoder la valeur pour obtenir le vrai nom
-                console.log(valeur);
                 selectionVilles.innerHTML = "";
                 afficheCartes.innerHTML = "";
                 titreVille.innerText = "";
                 getInsee(valeur); // Appeler la fonction avec le nom décodé
             });
         });
+
     });
 }
 
@@ -224,8 +224,6 @@ function getInsee(nomVille){
         return reponse.json();
     })
     .then(data => {
-        codeInsee = data.cities[0].insee
-        console.log(codeInsee)
         titreVille.innerText = nomVille
         afficheMeteo()
     })
@@ -244,7 +242,6 @@ function afficheMeteo(){
         return reponse.json();
     })
     .then(data => {
-        console.log(data);
         creationCarte(TypeCarte.Ensoleillement,data.forecast[0].sun_hours)
         creationCarte(TypeCarte.TMax,data.forecast[0].tmax)
         creationCarte(TypeCarte.TMin,data.forecast[0].tmin)

@@ -104,12 +104,6 @@ select {
     font-size: 1.6em;
 }
 
-#affichageInfosSupp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 /*****************************************************************************/
 
  /* The switch - the box around the slider */

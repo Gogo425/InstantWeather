@@ -16,7 +16,7 @@
     </header>
     <main>
         <div>
-            <input type="button" id="bouttonParamétre" value="Paramétre" />
+            <input type="button" id="bouttonParamétre" value="Paramètre" />
 
             <input type="range" id="choixJour" min="1" max="7" value="1" />
             <label for="volume" id="afficheJour">nb jour affichée : </label>
@@ -43,9 +43,9 @@
                 <span class="slider round" id="ChoixDirectionVent"></span>                
             </label>
 
-            <input type="button" id="bouttonValide" value="Validée" />
+            <input type="button" id="bouttonValide" value="Valider" />
 
-            <input type="button" id="bouttonAnnule" value="Annuée" />
+            <input type="button" id="bouttonAnnule" value="Annuler" />
         </div>
 
 
@@ -53,19 +53,11 @@
         <div id="barreDeRecherche">
             <form action="#">
                 <div id="inputRecherche">
-                    <input id = "zoneCodePostal" type="text" placeholder="Entrez votre code postal" pattern="^\d{5}$" maxlength="5" required>
+                    <input  id = "zoneCodePostal"  autocomplete="off" type="text" placeholder="Entrez votre code postal" pattern="^\d{5}$" maxlength="5" required>
                 </div>
             </form>
         </div>
         <div id="selection">
-        </div>
-        <div id="affichageInfosSupp">
-            <!-- <p id = "resultatmeteoLatitude">Latitude : </p>
-            <p id = "resultatmeteoLontitude">Lontitude : </p>
-            <p id = "tempMax">température Max : </p>
-            <p id = "tempMin">température Min : </p>
-            <p id = "probaPluie">probabilité de pluie : </p>
-            <p id = "nbHensoleillement"> nombre d’heures d’ensoleillement : </p> -->
         </div>
         <h2 id="titreVille"></h2>
         <div id="listeCarte">
